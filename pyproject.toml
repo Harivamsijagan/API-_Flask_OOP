@@ -2,22 +2,21 @@
 name = "flaskproj"
 version = "0.1.0"
 description = "Flask project"
-readme = "README.md"
-authors = [
-    { name = "vamsi jagan", email = "jaggupaturi9@gmail.com" }
-]
 requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.3",
     "requests>=2.34.2",
 ]
 
-[project.scripts]
-flaskproj = "flaskproj:main"
-
 [build-system]
-requires = ["uv_build>=0.12.5,<0.13.0"]
-build-backend = "uv_build"
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.vercel]
 entrypoint = "src.flaskproj.students:app"
