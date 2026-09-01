@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
-
+from  .choco_fudge  import user_bp
 app = Flask(__name__)
+app.register_blueprint(user_bp)
+
 
 class Student:
 
