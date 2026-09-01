@@ -12,7 +12,7 @@ dependencies = [
     "requests>=2.34.2",
 ]
 [tool.vercel]
-entrypoint = "src/flaskproj:__init__"
+entrypoint = "src/flaskproj:app"
 
 [project.scripts]
 flaskproj = "flaskproj:main"
