@@ -208,6 +208,10 @@ def get_stats():
         "lowest_marks": min(marks)
     }), 200
 
+@app.get("/test")
+def handle_test():
+    return "Working"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
