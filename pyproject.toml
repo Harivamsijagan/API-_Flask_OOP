@@ -1,20 +1,13 @@
 [project]
-name = "flaskproj"
+name = "fastapi-pr"
 version = "0.1.0"
-description = "Flask project"
+description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "vamsi jagan", email = "jaggupaturi9@gmail.com" }
-]
 requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.3",
     "requests>=2.34.2",
 ]
 
-[project.scripts]
-flaskproj = "flaskproj:main"
-
-[build-system]
-requires = ["uv_build>=0.12.5,<0.13.0"]
-build-backend = "uv_build"
+[tool.vercel]
+entrypoint = "src.flaskapi_pr.student:app"
