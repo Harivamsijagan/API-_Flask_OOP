@@ -319,8 +319,6 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-
-# Student Class
 class Student:
 
     def __init__(self, student_id, name, age, course, marks):
@@ -354,7 +352,6 @@ class Student:
         self.marks = marks
 
 
-# StudentManager Class
 class StudentManager:
 
     def __init__(self):
@@ -410,12 +407,8 @@ class StudentManager:
 
         return passed
 
-
-# Create StudentManager object
 manager = StudentManager()
 
-
-# POST /students
 @app.post("/students")
 def add_student():
 
@@ -445,7 +438,6 @@ def add_student():
     return jsonify(student.get_details()), 201
 
 
-# GET /students
 @app.get("/students")
 def get_students():
 
@@ -456,8 +448,6 @@ def get_students():
         for student in students
     ]), 200
 
-
-# GET /students/<id>
 @app.get("/students/<int:student_id>")
 def get_student(student_id):
 
@@ -470,8 +460,6 @@ def get_student(student_id):
 
     return jsonify(student.get_details()), 200
 
-
-# PATCH /students/<id>
 @app.patch("/students/<int:student_id>")
 def update_student(student_id):
 
@@ -491,8 +479,6 @@ def update_student(student_id):
 
     return jsonify(student.get_details()), 200
 
-
-# DELETE /students/<id>
 @app.delete("/students/<int:student_id>")
 def delete_student(student_id):
 
@@ -507,8 +493,6 @@ def delete_student(student_id):
         "message": "Student deleted successfully"
     }), 200
 
-
-# GET /students/passed
 @app.get("/students/passed")
 def get_passed_students():
 
@@ -519,8 +503,6 @@ def get_passed_students():
         for student in students
     ]), 200
 
-
-# BONUS: GET /students/stats
 @app.get("/students/stats")
 def get_stats():
 
@@ -546,3 +528,4 @@ def get_stats():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
